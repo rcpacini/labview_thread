@@ -3,6 +3,8 @@ Threading in LabVIEW using asynchronous calls on strictly typed VIs
 
 Threading in LabVIEW is strictly typed, which mean the connector pane and terminal wiring types (i.e. Required, Recommended, Optional) affect the asynchronous call methods. This threading library caches the strictly typed VI references and type casts the specified terminal types used by the **start the asynchronous call** and **wait for asynchronous call** methods.
 
+![VI Tree](/docs/imgs/vitree.png)
+
 ## Getting Started
 
 Run the **Thread.lvlib:Demo.vi** to see how to **open**, **start** and **close** a strictly typed VI thread. 
