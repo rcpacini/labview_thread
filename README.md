@@ -22,6 +22,12 @@ Save the VI and wire the **VI Path** and **Thread Name** to the **Open.vi** as s
 
 Note: The **Open.vi** creates a new VI Server reference but does not start the thread, use the **Start.vi** to run the VI and **Close.vi** to wait for the thread to finish before disposing the VI reference.
 
+Additionally, each named thread is cached so that a thread can be fetched anywhere within the application using the **Get.vi**. This allows the user to set/get the VI properties using the generic VI reference returned by the **Generic VI.vi**. 
+
+Use the **List.vi** to get a list of all thread names registered. 
+
+Warning: Each thread name must be unique. The last thread added with the same name override any previously existing (uses LabVIEW Maps).
+
 ## Type Casting
 
 LabVIEW's strictly typed VIs require the connector pane and terminal wiring types to be identical, this means that the connector pane type, rotation, terminal wiring of Required, Recommended or Optional must be identical as well. This library circumvents the strict VI typeness by casting to a variant and performing type cast check when the asynchronous call and wait methods are called. This accounts for the development environment option: **Front Panel > Connector pane terminals default to required**.
