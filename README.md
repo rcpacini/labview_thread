@@ -24,12 +24,12 @@ Note: The **Open.vi** creates a new VI Server reference but does not start the t
 
 ## Type Casting
 
-LabVIEW strictly typed VIs require the connector pane and terminal wiring types to be identical, this means that the connector pane type, rotation, terminal wiring of Required, Recommended or Optional must be identical as well. This library circumvents the strict VI typeness by casting to a variant and performing type cast check when the asynchronous call and wait methods are called. This accounts for the development environment option: **Front Panel > Connector pane terminals default to required**.
+LabVIEW's strictly typed VIs require the connector pane and terminal wiring types to be identical, this means that the connector pane type, rotation, terminal wiring of Required, Recommended or Optional must be identical as well. This library circumvents the strict VI typeness by casting to a variant and performing type cast check when the asynchronous call and wait methods are called. This accounts for the development environment option: **Front Panel > Connector pane terminals default to required**.
 
 ![Justification](/docs/imgs/justification.png)
 
-Under the hood, connector pane terminal type cast checks are performed to call the appropriate async methods, as show here:
+Under the hood, connector pane terminal type cast checks are performed to call the appropriate async methods, as illustrated here:
 
 ![Type Cast](/docs/imgs/typecast.png)
 
-Threading in LabVIEW is difficult because of its strict data typing and conditional options. This library provides the basic means to use LabVIEW's asynchronous call and collect without needing a lot of VI wrappers.
+Threading in LabVIEW is difficult because of its strict data typing and overly complicated threading options (Non-Reentrant, Reentrant, Async Forget, Async Collect, etc.). This library provides the basic means to use LabVIEW's asynchronous call and collect without needing a lot of unneccessary wrapper methods.
